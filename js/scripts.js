@@ -1,13 +1,6 @@
 /* Template: Viso - Recruiting Agency Landing Page HTML Template
    Author: Inovatik
-   Description: Custom JS file
-
-var Airtable = require('airtable');
-    Airtable.configure({
-        endpointUrl: 'https://api.airtable.com',
-        apiKey: 'key8zn41bDBHW6MjE'
-    });
-    var base = Airtable.base('appHzP60ZmgxE6FaD');*/
+   Description: Custom JS file*/
 	
 
 
@@ -55,7 +48,7 @@ var Airtable = require('airtable');
 		}
     });
 
-    const keys = require('./keys');	
+    //const keys = require('./keys');	
 
     /* Card Slider - Swiper */
 	var cardSlider = new Swiper('.card-slider', {
@@ -232,10 +225,11 @@ var Airtable = require('airtable');
         var m_data = new FormData();   
         m_data.append( 'first_name', $('#gname').val());
         m_data.append( 'email_address', $('#gemail').val());
-        m_data.append( 'phone', $('#gphone').val());
         m_data.append( 'job', $('#gjob').val());
-        m_data.append( 'file_attach', $('input[name=file_attach]')[0].files[0]);
-        $.ajax({
+        addToAirtable(m_data);
+        gformSuccess();
+        console.log(m_data)
+        /*$.ajax({
             url: "php/applicationform-process.php",
             data: m_data,
             processData: false,
@@ -243,9 +237,8 @@ var Airtable = require('airtable');
             type: 'POST',
             dataType:'text',
             success: async function(result){
-                console.log(result);
                 if (result == "success") {
-                    await addToAirtable(m_data);
+                    const data = await addToAirtable(m_data);
                     gformSuccess();
                 } else if (result == "not-pdf") {
                     gformError();
@@ -258,14 +251,14 @@ var Airtable = require('airtable');
                     gformProblem();
                 }
             }
-        })
+        })*/
 	}
 
     async function addToAirtable(data){
         var Airtable = require('airtable');
         Airtable.configure({
             endpointUrl: 'https://api.airtable.com',
-            apiKey: keys.airtable.API
+            apiKey: ''
         });
         var base = Airtable.base('appHzP60ZmgxE6FaD');
         try{
@@ -274,12 +267,6 @@ var Airtable = require('airtable');
                    "fields": {
                      "Email": data.get('email_address'),
                      "First name": data.get('first_name'),
-                     "Resume": [
-                       {
-                         "url": data.get('file_attach')
-                       }
-                     ],
-                     "Phone number":data.get('phone'),
                      "Job": data.get('job')
                    }
                  }
@@ -295,9 +282,10 @@ var Airtable = require('airtable');
     }
 
     function gformSuccess() {
+        console.log("in from success");
         $("#applicationForm")[0].reset();
-        document.getElementById("filelabel").innerHTML = "Choose file"; // resets the Choose File button
-        gsubmitMSG(true, "Message Submitted!");
+        //document.getElementById("filelabel").innerHTML = "Choose file"; // resets the Choose File button
+        gsubmitMSG(true, "Information Submitted!");
         $("input").removeClass('notEmpty'); // resets input field labels after submission
     }
 
@@ -387,74 +375,6 @@ var Airtable = require('airtable');
         $("#nmsgSubmit").removeClass().addClass(msgClasses).text(msg);
     }
 
-
-    /* Contact Form */
-    $("#contactForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            cformError();
-            csubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            csubmitForm();
-        }
-    });
-
-    function csubmitForm() {
-        // initiate variables with form content
-		var name = $("#cname").val();
-		var email = $("#cemail").val();
-        var message = $("#cmessage").val();
-        $.ajax({
-            type: "POST",
-            url: "php/contactform-process.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message, 
-            success: function(text) {
-                if (text == "success") {
-                    cformSuccess();
-                } else {
-                    cformError();
-                    csubmitMSG(false, text);
-                }
-            }
-        });
-	}
-
-    function cformSuccess() {
-        $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
-        $("input").removeClass('notEmpty'); // resets the field label after submission
-        $("textarea").removeClass('notEmpty'); // resets the field label after submission
-    }
-
-    function cformError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $(this).removeClass();
-        });
-	}
-
-    function csubmitMSG(valid, msg) {
-        if (valid) {
-            var msgClasses = "h3 text-center tada animated";
-        } else {
-            var msgClasses = "h3 text-center";
-        }
-        $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
-    
-
-    /* Back To Top Button */
-    // create the back to top button
-    $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
-    var amountScrolled = 700;
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > amountScrolled) {
-            $('a.back-to-top').fadeIn('500');
-        } else {
-            $('a.back-to-top').fadeOut('500');
-        }
-    });
 
 
 	/* Removes Long Focus On Buttons */

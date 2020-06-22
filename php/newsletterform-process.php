@@ -1,6 +1,5 @@
 <?php
 $errorMSG = "";
-$email = "";
 
 if (empty($_POST["email"])) {
     $errorMSG = "Email is required ";
@@ -8,7 +7,7 @@ if (empty($_POST["email"])) {
     $email = $_POST["email"];
 }
 
-$EmailTo = $email;
+$EmailTo = "yourname@domain.com";
 $Subject = "New newsletter subscription from Viso landing page";
 
 // prepare email body text

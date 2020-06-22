@@ -2,7 +2,7 @@
 // sanitize input data using PHP filter_var().
 $first_name = filter_var($_POST["first_name"], FILTER_SANITIZE_STRING);
 $email_address = filter_var($_POST["email_address"], FILTER_SANITIZE_EMAIL);
-$phone = filter_var($_POST["phone"], FILTER_SANITIZE_EMAIL);
+//$phone = filter_var($_POST["phone"], FILTER_SANITIZE_EMAIL);
 $job = filter_var($_POST["job"], FILTER_SANITIZE_EMAIL);
 $subject = "New job application from Viso landing page";
 
@@ -15,8 +15,8 @@ $message .= "<tr><td><strong>Job:</strong> </td><td>" . strip_tags($_POST['job']
 $message .= "</table>";
 $message .= "</body></html>";
 
-$file_attached = false;
-if(isset($_FILES['file_attach'])) // check uploaded file
+$file_attached = true;
+/*if(isset($_FILES['file_attach'])) // check uploaded file
 {
     // get file details we need
     $file_tmp_name    = $_FILES['file_attach']['tmp_name'];
@@ -61,7 +61,7 @@ if ( ! ( in_array($extension, $allowedExts ) ) ) {
 if ( $file_size > 6000000 ) {
     echo 'too-large';
     exit();
-}
+}*/
 
 //continue if we have the file
 if ($file_attached) {
@@ -97,7 +97,7 @@ if ($file_attached) {
 } else {
 
     $eol = "\r\n";
-    $headers = "From: Viso <contact@joinviso.com>" . $eol;
+    $headers = "From: Viso <rita.roloff@gmail.com>" . $eol;
     $headers .= "Reply-To: ". strip_tags($email_address) . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -105,7 +105,7 @@ if ($file_attached) {
 }
 
 // recipient email address
-$to_email = $email_address;
+$to_email = "rita@fullreign.com";
 
 // send the mail
 $send_mail = mail($to_email, $subject, $body, $headers);
