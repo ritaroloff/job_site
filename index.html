@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Viso landing page HTML template is based on Bootstrap and it's designed for recruiting agencies to display job listings and gather CV applications through the included form.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Webpage Title -->
+    <title>Viso - Discover Qualified Remote Workers</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Viso</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> 
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <h1>Find Qualified <span id="js-rotating">Designers, Developers</span> From Around the World</h1>
+                        <p class="p-large">Viso helps you find the perfect remote candidate in fields like design & development</p>
+                       <!---- <a class="btn-solid-lg page-scroll" href="#jobPanel">Discover Jobs</a>-->
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/header.svg" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Introduction -->
+    <div class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h3><i class="fas fa-user-tie"></i>For Job Seekers</h3>
+                        <p>At Viso we believe in access to opportunity no matter where you live. We match you with compelling opportunities at the world’s most innovative companies.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h3><i class="fas fa-building"></i>For Employers</h3>
+                        <p>Let us be your HR department! Technical roles are hard to fill, but Viso's candidates are vetted and ready, so your pipeline fills up faster.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of introduction -->
+
+
+
+    <!-- Application -->
+    <div id="application" class="form-1">
+        <div class="container">
+            <div class="section-wrapper">
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <!-- Text Container -->
+                        <div class="text-container">
+                            <h2>Get Access to Opportunities Around the World!</h2>
+                            <p>Create a free profile to unlock opportunities at the most innovative companies.</p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <div class="media-body">Fill out the following form with your information</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <div class="media-body">Upload your resume. Only <strong>pdf, doc</strong> and <strong>docx</strong> files!</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <div class="media-body">Uploaded file should not be larger than <strong>6 MB</strong></div>
+                                </li>
+                            </ul>
+                        </div> <!-- end of text-container -->
+                        <!-- end of text container -->
+
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+
+                        <!-- Form Container -->
+                        <form id="applicationForm" method="post" enctype="multipart/form-data" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="gname" name="gname" required>
+                                <label class="label-control" for="gname">Name</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control-input" id="gemail" name="gemail" required>
+                                <label class="label-control" for="gemail">Email</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="gphone" name="gphone" required>
+                                <label class="label-control" for="gphone">Phone</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="gjob" name="gjob" required>
+                                <label class="label-control" for="gjob">What's your dream job?</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <input name="file_attach" type="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple required />
+                            <label for="file"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span id="filelabel">Choose a file&hellip;</span></label>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">Submit</button>
+                            </div>
+                            <div class="form-message">
+                                <div id="gmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </form>
+                        <!-- end of form container -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of section-wrapper -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->
+    <!-- end of application -->
+
+
+    <!-- Services -->
+    <div class="basic-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Recruitment Services For Companies</h2>
+                    <p class="p-heading">As the world evolves, so does the way we work. Our software allows you to quickly find high quality and diverse candidates.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Service -->
+                    <div class="service-container">
+                        <div class="service-icon">
+                            <span class="fas fa-rocket"></span>
+                        </div> <!-- end of service-icon -->
+                        <div class="service-text">
+                            <h3>Rocket Fast Process</h3>
+                            <p>Looking to hire? Our candidates are pre-vetted and screened, allowing for super fast turn around time </p>
+                            <br>
+                        </div> <!-- end of service-text -->
+                        
+                    </div> <!-- end of service-container -->
+                    <!-- end of service -->
+
+                    <!-- Service -->
+                    <div class="service-container">
+                        <div class="service-icon">
+                            <span class="fas fa-users"></span>
+                        </div> <!-- end of service-icon -->
+                        <div class="service-text">
+                            <h3>Candidate Evaluation</h3>
+                            <p>Don't waste your time shifting through thousands of resumes, instead let us do the heavy lifting to allow you to concentrate on important tasks.</p>
+                        </div> <!-- end of service-text -->
+                    </div> <!-- end of service-container -->
+                    <!-- end of service -->
+
+                    <!-- Service -->
+                    <div class="service-container">
+                        <div class="service-icon">
+                            <span class="fas fa-user-tie"></span>
+                        </div> <!-- end of service-icon -->
+                        <div class="service-text">
+                            <h3>Unbiased Selection</h3>
+                            <p>Companies are presented with a list of anonymous profiles that highlight the skills they’re looking for.</p>
+                        </div> <!-- end of service-text -->
+                    </div> <!-- end of service-container -->
+                    <!-- end of service -->
+
+                    <!-- Service -->
+                    <div class="service-container">
+                        <div class="service-icon">
+                            <span class="fas fa-people-carry"></span>
+                        </div> <!-- end of service-icon -->
+                        <div class="service-text">
+                            <h3>Staff Renting</h3>
+                            <p>Only need a couple of people for short-term projects? No problemo! We can provide them to you as daily paid employees.</p>
+                        </div> <!-- end of service-text -->
+                    </div> <!-- end of service-container -->
+                    <!-- end of service -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-6 -->
+    <!-- end of services -->
+
+
+    <!-- Pricing -->
+    <div class="cards">
+        <svg class="decoration-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 192.275"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>decoration-frame</title><path class="cls-1" d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z" transform="translate(0 -158.755)"/></svg>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Pricing Options For Companies</h2>
+                    <p class="p-heading">We created three packages that cover essentials HR needs like screening and interviewing of remote candidates</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">NEWBIE</h5>
+                            <div class="price"><span class="currency">$</span>0</div>
+                            <div class="p-small">Per month</div>
+                            <hr class="pricing-divider">
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <div class="media-body">Stay on the wait list for 3 months before accessing the software</div>
+                                </li>
+                            </ul>
+                            <br>
+                            <br>
+                            <a class="btn-solid-reg page-scroll" href="https://curlyhair.typeform.com/to/QpZGBtGN">Get Started!</a>
+                            <br>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">STARTUP</h5>
+                            <div class="price"><span class="currency">$</span>299</div>
+                            <div class="p-small">Per month</div>
+                            <hr class="pricing-divider">
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <div class="media-body">Robust screening</div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">Candidates interviews and calls</div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">Follow up emails and messages</div>
+                                </li>
+                            </ul>
+                            <a class="btn-solid-reg page-scroll" href="https://curlyhair.typeform.com/to/QpZGBtGN">Get Started!</a>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">ENTERPRISE</h5>
+                            <div class="price"><span class="currency">$</span>599</div>
+                            <div class="p-small">Per month</div>
+                            <hr class="pricing-divider">
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <div class="media-body">Robust screening</div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">Candidates interviews and calls</div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">Follow up emails and messages</div>
+                                </li>
+                            </ul>
+                            <a class="btn-solid-reg page-scroll" href="https://curlyhair.typeform.com/to/QpZGBtGN">Get Started!</a>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards -->
+    <!-- end of pricing -->
+
+
+    <br>
+    <br>
+
+    <!-- Newsletter -->
+	<div class="form-2">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Stay in the Loop</h2>
+                    <p class="p-heading">Get access to global talent</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Newsletter Form -->
+                    <form id="newsletterForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group mail">
+                            <input type="email" class="form-control-input" id="nemail" required>
+                            <label class="label-control" for="nemail">Email address</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">Sign Up</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="nmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of newsletter form -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+		</div> <!-- end of container -->
+    </div> <!-- end of form-2 -->
+    <!-- end of newsletter -->
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h6>At Viso</h6>
+                        <p class="p-small">We believe in access to equal opportunity, no matter where you live</p>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col fourth">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://twitter.com/joinviso">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <p class="p-small">We would love to hear from you <a href="mailto:contact@joinviso.com"><strong>contact@joinviso.com</strong></a></p>
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © <a href="https://twitter.com/RitaRoloff">Landing Page Developed by Rita Roloff</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
