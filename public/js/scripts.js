@@ -222,63 +222,29 @@
 
     function gsubmitForm() {
         //data to be sent to server        
-        var m_data = new FormData();   
-        m_data.append( 'first_name', $('#gname').val());
-        m_data.append( 'email_address', $('#gemail').val());
-        m_data.append( 'job', $('#gjob').val());
-        addToAirtable(m_data);
+        const data = {
+            'First name': $('#gname').val(),
+            'Email': $('#gemail').val(),
+            'Job': $('#gjob').val()
+        };
+        addToAirtable(data);
         gformSuccess();
-        console.log(m_data)
-        /*$.ajax({
-            url: "php/applicationform-process.php",
-            data: m_data,
-            processData: false,
-            contentType: false,
-            type: 'POST',
-            dataType:'text',
-            success: async function(result){
-                if (result == "success") {
-                    const data = await addToAirtable(m_data);
-                    gformSuccess();
-                } else if (result == "not-pdf") {
-                    gformError();
-                    gformNotPdf();
-                }  else if (result == "too-large") {
-                    gformError();
-                    gformTooLarge();
-                } else {
-                    gformError();
-                    gformProblem();
-                }
-            }
-        })*/
+        console.log(data)
 	}
 
     async function addToAirtable(data){
-        var Airtable = require('airtable');
-        Airtable.configure({
-            endpointUrl: 'https://api.airtable.com',
-            apiKey: ''
+        const response = await fetch('/.netlify/functions/user', {
+            method: 'POST',
+            mode: 'cors', 
+            cache: 'no-cache', 
+            credentials: 'same-origin', 
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            redirect: 'follow', 
+            referrerPolicy: 'no-referrer', 
+            body: JSON.stringify(data) 
         });
-        var base = Airtable.base('appHzP60ZmgxE6FaD');
-        try{
-            const records = await base('Table 1').create([
-                 {
-                   "fields": {
-                     "Email": data.get('email_address'),
-                     "First name": data.get('first_name'),
-                     "Job": data.get('job')
-                   }
-                 }
-               ]);
-               records.forEach(function (record) {
-                console.log(record.getId());
-              });
-              return records[0];
-        }catch (err) {
-      console.error(err);
-      return;
-    }
     }
 
     function gformSuccess() {
@@ -289,23 +255,6 @@
         $("input").removeClass('notEmpty'); // resets input field labels after submission
     }
 
-    function gformNotPdf() {
-        $("#applicationForm")[0].reset();
-        document.getElementById("filelabel").innerHTML = "Choose file";
-        gsubmitMSG(true, "Only PDF, DOC, DOCX files allowed")
-    }
-
-    function gformTooLarge() {
-        $("#applicationForm")[0].reset();
-        document.getElementById("filelabel").innerHTML = "Choose file";
-        gsubmitMSG(true, "File should be less than 6 MB")
-    }
-
-    function gformProblem() {
-        $("#applicationForm")[0].reset();
-        document.getElementById("filelabel").innerHTML = "Choose file";
-        gsubmitMSG(true, "Please fill all fields!")
-    }
 
     function gformError() {
         $("#applicationForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {

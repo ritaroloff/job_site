@@ -1,0 +1,22 @@
+{
+  "name": "job_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritaroloff/job_site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ritaroloff/job_site/issues"
+  },
+  "homepage": "https://github.com/ritaroloff/job_site#readme",
+  "dependencies": {
+    "airtable": "^0.8.1"
+  }
+}
