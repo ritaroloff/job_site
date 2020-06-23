@@ -1,5 +1,5 @@
 const Airtable = require("airtable");
-const keys = require("../../keys.js");
+const keys = require("../keys.js");
 
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
 exports.handler = async (event, context, callback) => {
