@@ -229,7 +229,6 @@
         };
         addToAirtable(data);
         gformSuccess();
-        console.log(data)
 	}
 
     async function addToAirtable(data){
@@ -287,20 +286,12 @@
 
     function nsubmitForm() {
         // initiate variables with form content
-		var email = $("#nemail").val();
-        $.ajax({
-            type: "POST",
-            url: "php/newsletterform-process.php",
-            data: "email=" + email, 
-            success: function(text) {
-                if (text == "success") {
-                    nformSuccess();
-                } else {
-                    nformError();
-                    nsubmitMSG(false, text);
-                }
-            }
-        });
+        var inputEmail = $("#nemail").val();
+        const data = {
+            'Email': inputEmail
+        };
+        addToAirtable(data);
+        nformSuccess();
 	}
 
     function nformSuccess() {
